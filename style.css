@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --ff-span: 'Staatliches';
+    --ff-heading: 'Staatliches', cursive;
+    --ff-texting: 'Palanquin', sans-serif;
+
+    --fc-heading: rgb(100, 86, 228);
+    --fc-fundo: #aeecc3;
+    --fc-hb: rgb(211, 133, 97);
+    --fc-span: #FEEAFA;
+    --fc-fundoH1: #CBC0D3;
+
+    --fs-heading: clamp(1rem, 4rem, 2rem);
+}
+
+body {
+    display: grid;
+    justify-content: space-evenly;
+    justify-items: center; 
+
+}
+
+header {
+    position: relative;
+    min-width: 39.4rem;
+    background: #8E9AAF;
+}
+
+header img {
+    border-radius: 50%;
+    width: 22rem;
+    margin: 3.8rem 10rem 10rem;
+}
+
+header img:hover {
+    transform: skewX(10deg);
+    box-shadow: black 5px 5px 5px;
+}
+
+header h1 {
+    text-transform: uppercase;
+    font-family: var(--ff-heading);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4.0rem;
+    line-height: 3.4rem;
+    letter-spacing: 1rem;
+    color: #FFFFFF;
+    text-shadow: 0px 2px 2px rgb(0, 0, 0);
+    text-align: center;
+
+    width: 100%;
+    border-radius: 8px;
+    
+    background: var(--fc-fundoH1);
+    
+    position: absolute;
+    padding: 5px;
+    margin-top: -9.0rem;
+}
+
+header .content-text p {
+    background: #EFF1FF;
+    width: 42.5rem;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+
+    line-height: 2.2rem;
+    letter-spacing: 2px;;
+
+    text-align: center;
+
+    color: #23053A;
+    text-shadow: rgb(187, 186, 186) 1px 1px 1px;
+    
+    font-family: var(--ff-texting);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.7rem;
+}
+
+header .content-text p::before {
+    content: 'Lorem ationem voluptatm veniam obcaefdgddfgdergergergergergcati eaque ratione quia ipsam velit illum animi libero earum quisquam iusto quis explicabo ea similique repellendus!';
+}
+
+main .section-gallery {
+    padding-bottom: 20px;
+    height: 179.5rem;
+    min-width: 42rem;
+    
+    display: grid;
+    justify-content: center;
+    background: #EFF1FF;
+}
+
+.section-gallery .card:hover {
+    opacity: 1;
+}
+
+.section-gallery .card {
+    position: relative;
+    min-height: 100%;
+    padding-top: 3.5rem;
+    opacity: 0.9;
+}
+
+.section-gallery .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.section-gallery .card span {
+    background: var(--fc-span);
+    font-family: var(--ff-span);
+    font-size: var(--fs-heading);
+    font-weight: 400;
+    color: black;
+
+    border-radius: 28px;
+
+    display: flex;
+    position: absolute;
+    height: 3.5rem;
+    width: 11rem;
+    top: 2rem;
+    right: 1.2vw;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+/*INICIANDO CONFIGURAÇÃO PARA DESKTOP*/
+
+@media (min-width: 900px){
+    body{
+        margin: 10rem auto;
+        display: flex;      
+    }
+    header .content-text p:before {
+        content: 'Helit illum animi libero earum quisquam iusto quis explicabo ea similique repellendus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem voluptatum, reprehenderit quibusdam veniam obcaecati eaque ratione quia ipsam velit illum animi libero earum quisquam iusto quis explicabo ea similique repellendus!';
+    }
+    header .content-text p{
+        background: #8E9AAF;
+        color: white;
+        max-width: 39.4rem;        
+    }
+    
+    main .section-gallery{
+        padding: 2rem;
+        gap: 1rem;
+        grid-template-columns: max-content;
+        height: 70rem;
+        
+        display: grid;
+        grid-template-areas: 
+        "A B C"
+        "D B E"
+        "D F E";
+    }
+   
+.section-gallery .card:nth-child(1){
+    grid-area: A;
+}
+.section-gallery .card:nth-child(2){
+    grid-area: B;
+}
+
+.section-gallery .card:nth-child(3){
+    grid-area: C;
+}
+.section-gallery .card:nth-child(4){
+    grid-area: D;
+}
+
+.section-gallery .card:nth-child(5){
+    grid-area: E;
+}
+.section-gallery .card:nth-child(6){
+    grid-area: F;
+}
+.section-gallery .card{
+    padding-top: 0;
+    width: 22vw;
+}
+.card span:hover{
+    display: none;
+}
+}
